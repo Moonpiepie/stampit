@@ -1,6 +1,6 @@
 {
   "name": "@tp/stampit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A nice, handy API implementation of the compose standard",
   "keywords": [],
   "main": "dist/stampit.umd.js",
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "scripts": {
     "start": "rollup -c rollup.config.ts -w",
@@ -31,7 +31,9 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "validate-commit-msg"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -96,7 +98,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.9.0",
-    "semantic-release": "^11.0.2",
+    "semantic-release": "^12.4.1",
     "ts-jest": "^22.0.0",
     "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
