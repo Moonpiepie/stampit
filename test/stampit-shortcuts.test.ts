@@ -4,7 +4,10 @@ import stampit from "../src/stampit"
 // stampit.methods, stampit.init, stampit.props, etc.
 
 test('stampit.methods shortcut', () => {
-  const methods = {method1() {}};
+  const methods = {
+    method1() {
+    }
+  };
   const stamp1 = stampit({methods: methods});
   const stamp2 = stampit.methods(methods);
 
@@ -12,7 +15,9 @@ test('stampit.methods shortcut', () => {
 });
 
 test('stampit.init shortcut', () => {
-  const init = () => {};
+  const init = () => {
+    // empty
+  };
   const stamp1 = stampit({init: init});
   const stamp2 = stampit.init(init);
 
@@ -20,7 +25,9 @@ test('stampit.init shortcut', () => {
 });
 
 test('stampit.composers shortcut', () => {
-  const composer = () => {};
+  const composer = () => {
+    // empty
+  };
   const stamp1 = stampit({composers: composer});
   const stamp2 = stampit.composers(composer);
 
@@ -28,7 +35,11 @@ test('stampit.composers shortcut', () => {
 });
 
 test('stampit.props shortcut', () => {
-  const props = {method1() {}};
+  const props = {
+    method1() {
+      // empty
+    }
+  };
   const stamp1 = stampit({props: props});
   const stamp2 = stampit.props(props);
 
@@ -36,7 +47,11 @@ test('stampit.props shortcut', () => {
 });
 
 test('stampit.statics shortcut', () => {
-  const statics = {method1() {}};
+  const statics = {
+    method1() {
+      // empty
+    }
+  };
   const stamp1 = stampit({statics: statics});
   const stamp2 = stampit.statics(statics);
 
@@ -90,7 +105,7 @@ test('all shortcuts combined', () => {
     .props().init().composers().deepProps()
     .statics().deepStatics().conf().deepConf();
 
-  const Init = init(function ({foo}) {
+  const Init = init(function (this: any, {foo}: any) {
     this.foo = foo;
   }).methods().properties().initializers().deepProperties()
     .staticProperties().staticDeepProperties()

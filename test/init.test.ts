@@ -4,7 +4,7 @@ import stampit from '../src/stampit';
 
 test('stamp.init() arguments are passed', () => {
   let initStamp;
-  const outerStamp = stampit().init((options, {instance, stamp, args}) => {
+  const outerStamp = stampit().init((options: any, {instance, stamp, args}: any) => {
     expect(instance).toBeTruthy();
     expect(typeof instance).toBe('object');
     expect(stamp).toBeTruthy();
@@ -20,7 +20,7 @@ test('stamp.init() arguments are passed', () => {
 });
 
 test('stamp.init() should assign `this` to `{ instance }`', () => {
-  const stamp = stampit().init(function (options, {instance}) {
+  const stamp = stampit().init(function (this: any, options: any, {instance}: any) {
     expect(instance === this).toBeTruthy();
   });
 
@@ -28,7 +28,7 @@ test('stamp.init() should assign `this` to `{ instance }`', () => {
 });
 
 test('stamp.init() should assign stamp to `{ stamp }`', () => {
-  const outerStamp = stampit().init((options, {stamp}) => {
+  const outerStamp = stampit().init((options: any, {stamp}: any) => {
     expect(outerStamp === stamp).toBeTruthy();
   });
 
@@ -36,7 +36,7 @@ test('stamp.init() should assign stamp to `{ stamp }`', () => {
 });
 
 test('stamp.init() should assign arguments to `{ args }`', () => {
-  const stamp = stampit().init((options, {args}) => {
+  const stamp = stampit().init((options: any, {args}: any) => {
     expect(args[0]).toBe('arg1');
     expect(args[1]).toBe(undefined);
     expect(args[2]).toBe('arg3');
@@ -91,7 +91,7 @@ test('stamp.init() can handle multiple init functions assigned with array', () =
 });
 
 test('stamp.init() should call composed init functions in order', () => {
-  const result = [];
+  const result: any = [];
 
   const stamp = stampit().init(() => {
     result.push('a');
@@ -133,7 +133,7 @@ test('explicit push wrong object to stamp.compose.initializers[]', () => {
 });
 
 test('stamp.compose.initializers malformed object', () => {
-  const stamp = stampit.props({ref: 42}).init(function () {
+  const stamp = stampit.props({ref: 42}).init(function (this: any) {
     const secret = 'foo';
     this.getSecret = () => {
       return secret;
@@ -147,11 +147,11 @@ test('stamp.compose.initializers malformed object', () => {
 });
 
 test('changing second arg is not propagaded', () => {
-  const stamp = stampit().init((opts, arg2) => {
+  const stamp = stampit().init((opts: any, arg2: any) => {
     arg2.instance = null;
     arg2.stamp = null;
     arg2.args = null;
-  }).init((opts, arg2) => {
+  }).init((opts: any, arg2: any) => {
     expect(arg2.instance).not.toBe(null);
     expect(arg2.stamp).not.toBe(null);
     expect(arg2.args).not.toBe(null);

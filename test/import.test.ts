@@ -1,26 +1,19 @@
+'use strict';
 /* eslint-disable */
-const stampit1 = require("../src/stampit")
-
-test('import is the same as require', () => {
-  const stampit2 = require("../src/stampit")
-
-  expect(stampit1).toBe(stampit2);
-});
+import stampit from '../src/stampit';
 
 test('infection works using the require("src/stampit")', () => {
-  const obj = require('../src/stampit')
-    .init(function () {
-      const secret = 'foo';
-      this.getSecret = () => {
-        return secret;
-      };
-    })
-    .methods({
-      foo() {
-        return 'foo';
-      }
-    })
-    .create();
+  const obj = stampit.init(function (this: any) {
+    'use strict';
+    const secret = 'foo';
+    this.getSecret = () => {
+      return secret;
+    };
+  }).methods({
+    foo() {
+      return 'foo';
+    }
+  }).create();
 
   expect(obj.getSecret()).toBe('foo');
   expect(obj.foo() === 'foo').toBeTruthy();

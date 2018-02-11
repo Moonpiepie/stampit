@@ -1,7 +1,6 @@
+'use strict';
 import stampit from '../src/stampit';
-
 // Basics
-
 test('.create()', () => {
   const stamp = stampit({
     methods: {
@@ -16,7 +15,7 @@ test('.create()', () => {
 });
 
 test('.create(options)', done => {
-  const stamp = stampit.init((options) => {
+  const stamp = stampit.init((options: any) => {
     expect(options).toEqual({foo: 'bar'});
     done();
   });

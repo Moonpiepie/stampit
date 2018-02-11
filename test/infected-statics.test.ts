@@ -63,7 +63,7 @@ test('stampit().staticPropertyDescriptors static method', () => {
 
 test('stampit() can be infected', () => {
   let counter = 0;
-  const infectedStampit = function (...args) {
+  const infectedStampit = function (this: any, ...args: any[]) {
     counter += 1;
     args.push({
       staticProperties: {

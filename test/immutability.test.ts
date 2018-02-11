@@ -5,15 +5,18 @@ import stampit from '../src/stampit';
 test('Basic stamp immutability', () => {
   const methods = {
     f() {
+      // empty
     }
   };
   const props = {s: {deep: 1}};
   const deepProps = {p: {deep: 1}};
   const init = () => {
+    // empty
   };
   const stamp1 = stampit({methods, props, deepProps, init});
 
   methods.f = () => {
+    // empty
   };
   props.s.deep = 2;
   deepProps.p.deep = 2;
@@ -53,6 +56,7 @@ test('Stamp immutability made of same source', () => {
 test('Basic object immutability', () => {
   const methods = {
     f() {
+      // empty
     }
   };
   const props = {s: {deep: 1}};
@@ -60,6 +64,7 @@ test('Basic object immutability', () => {
   const o1 = stampit({methods, props, deepProps})();
 
   methods.f = () => {
+    // empty
   };
   props.s.deep = 2;
   deepProps.p.deep = 2;
@@ -77,6 +82,7 @@ test('Stamp chaining functions immutability', () => {
   const stamp1 = stampit();
   const stamp2 = stamp1.methods({
     f() {
+      // empty
     }
   });
   const stamp3 = stamp2.properties({s: {deep: 1}});

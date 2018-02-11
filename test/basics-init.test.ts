@@ -16,12 +16,12 @@ test('stampit({ init })', () => {
 });
 
 test('stampit().init()', () => {
-  const obj = stampit().init(function () {
+  const obj = stampit().init(function (this: any) {
     const secret = 'foo';
     this.getSecret = () => {
       return secret;
     };
-  }).init(function () {
+  }).init(function (this: any) {
     this.a = 'a';
   }).create();
 
@@ -37,7 +37,7 @@ test('stampit({ init }).init()', () => {
         return secret;
       };
     }
-  }).init(function () {
+  }).init(function (this: any) {
     this.a = 'a';
   }).create();
 

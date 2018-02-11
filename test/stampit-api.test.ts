@@ -1,9 +1,10 @@
 import stampit from '../src/stampit';
 
-function isFunction(obj) {
+function isFunction(obj: any) {
   return typeof obj === 'function';
 }
-function isStamp(obj) {
+
+function isStamp(obj: any) {
   return isFunction(obj) && isFunction(obj.compose);
 }
 
@@ -33,7 +34,7 @@ test('incorrect stampit({ init }) args', () => {
   expect(stampit({init: 42}).compose.initializers).toEqual(undefined);
   expect(stampit({init: null}).compose.initializers).toEqual(undefined);
   expect(stampit({init: [undefined]}).compose.initializers).toEqual(undefined);
-  expect(stampit({init: new RegExp()}).compose.initializers).toEqual(undefined);
+  expect(stampit({init: new RegExp('')}).compose.initializers).toEqual(undefined);
   expect(stampit({init: [42]}).compose.initializers).toEqual(undefined);
   expect(stampit({init: 'a string'}).compose.initializers).toEqual(undefined);
 });
@@ -44,7 +45,11 @@ test('incorrect stampit({ deepProps }) args', () => {
 });
 
 test('multiple arguments stampit(arg1, arg2, ...)', () => {
-  expect(stampit(null, {init() {}}).compose.initializers.length).toBe(1);
+  expect(stampit(null, {
+    init() {
+      // empty
+    }
+  }).compose.initializers.length).toBe(1);
   expect(stampit(null, {props: {x: 2}}).compose.properties.x).toBe(2);
   expect(stampit(null, {deepProps: {x: 2}}).compose.deepProperties.x).toBe(2);
   expect(stampit(null, {statics: {x: 2}}).compose.staticProperties.x).toBe(2);
