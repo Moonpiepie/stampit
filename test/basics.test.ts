@@ -1,4 +1,3 @@
-'use strict';
 import stampit from '../src/stampit';
 // Basics
 test('.create()', () => {
