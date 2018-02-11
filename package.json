@@ -12,7 +12,7 @@
   "author": "xiangsongtao <280304286@163.com>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:typescript-practice/stampit.git"
+    "url": "https://github.com/typescript-practice/stampit.git"
   },
   "license": "MIT",
   "engines": {
