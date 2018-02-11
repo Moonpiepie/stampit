@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "author": "向松涛 <280304286@163.com>",
+  "author": "xiangsongtao <280304286@163.com>",
   "repository": {
     "type": "git",
     "url": ""
@@ -52,7 +52,7 @@
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
