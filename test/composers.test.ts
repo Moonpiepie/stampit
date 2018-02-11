@@ -88,7 +88,7 @@ test('stampit({ composers() }) a non-stamp should be ignored', () => {
   const replacement = stampit();
   const stamp = stampit({
     composers() {
-      return () => {
+      return () => {// empty
       }; // non-stamp
     }
   });
@@ -115,7 +115,7 @@ test('stampit({ composers() }) returned value passed to the second composer', ()
 test('composers should be deduped', () => {
   const stamp2 = stampit();
   const stamp = stampit({
-    composers() {
+    composers() {// empty
     }
   });
 

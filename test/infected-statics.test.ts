@@ -3,7 +3,7 @@ import stampit from '../src/stampit';
 
 test('stampit().methods static method', () => {
   const methods = {
-    method1() {
+    method1() {// empty
     }
   };
   const stamp1 = stampit({methods: methods});
@@ -14,7 +14,7 @@ test('stampit().methods static method', () => {
 
 test('stampit().init static method', () => {
   const init = {
-    method1() {
+    method1() {// empty
     }
   };
   const stamp1 = stampit({init: init});
@@ -25,7 +25,7 @@ test('stampit().init static method', () => {
 
 test('stampit().props static method', () => {
   const props = {
-    method1() {
+    method1() {// empty
     }
   };
   const stamp1 = stampit({props: props});
@@ -36,7 +36,7 @@ test('stampit().props static method', () => {
 
 test('stampit().statics static method', () => {
   const statics = {
-    method1() {
+    method1() {// empty
     }
   };
   const stamp1 = stampit({statics: statics});

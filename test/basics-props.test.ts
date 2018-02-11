@@ -13,11 +13,13 @@ test('stampit().props()', () => {
     foo: {bar: 'bar'},
     propsOverride: false,
     func1() {
+      // empty
     }
   }).props({
     bar: 'bar',
     propsOverride: true,
     func2() {
+      // empty
     }
   }).create();
 
@@ -34,12 +36,14 @@ test('stampit({ props }).props()', () => {
       foo: {bar: 'bar'},
       propsOverride: false,
       func1() {
+        // empty
       }
     }
   }).props({
     bar: 'bar',
     propsOverride: true,
     func2() {
+      // empty
     }
   }).create();
 

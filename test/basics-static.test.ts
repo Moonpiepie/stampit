@@ -37,6 +37,7 @@ test('stampit().statics() last override', () => {
   const stamp2 = stampit()
     .statics({
       foo() {
+        // empty
       }
     }).compose(stamp1);
 
@@ -47,10 +48,12 @@ test('stampit().statics(arg1, arg2)', () => {
   const stamp1 = stampit().statics(
     {
       foo1() {
+        // empty
       }
     },
     {
       foo2() {
+        // empty
       }
     }
   );
@@ -62,11 +65,11 @@ test('stampit().statics(arg1, arg2)', () => {
 test('stampit.statics(arg1, arg2)', () => {
   const stamp1 = stampit.statics(
     {
-      foo1() {
+      foo1() {// empty
       }
     },
     {
-      foo2() {
+      foo2() {// empty
       }
     }
   );

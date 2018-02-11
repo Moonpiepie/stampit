@@ -35,12 +35,12 @@ test('Basic stamp immutability', () => {
 
 test('Stamp immutability made of same source', () => {
   const methods = {
-    f() {
+    f() {// empty
     }
   };
   const props = {s: {deep: 1}};
   const deepProps = {p: {deep: 1}};
-  const init = () => {
+  const init = () => {// empty
   };
   const stamp1 = stampit({methods, props, deepProps, init});
   const stamp2 = stampit({methods, props, deepProps, init});
@@ -86,7 +86,7 @@ test('Stamp chaining functions immutability', () => {
     }
   });
   const stamp3 = stamp2.properties({s: {deep: 1}});
-  const stamp4 = stamp3.init(() => {
+  const stamp4 = stamp3.init(() => {// empty
   });
   const stamp5 = stamp2.deepProperties({p: {deep: 1}});
   const stamp6 = stamp4.compose(stampit());

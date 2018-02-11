@@ -5,7 +5,7 @@ import stampit from "../src/stampit"
 
 test('stampit.methods shortcut', () => {
   const methods = {
-    method1() {
+    method1() {// empty
     }
   };
   const stamp1 = stampit({methods: methods});

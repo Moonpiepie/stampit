@@ -85,7 +85,7 @@ test('stampit.compose()', () => {
 test('stampit().compose() with extended descriptors', () => {
   const stamp = stampit().compose({
     props: {a: 1},
-    init() {
+    init() {// empty
     },
     deepProps: {a: 1},
     statics: {a: 1},
@@ -107,7 +107,7 @@ test('stampit().compose() with extended descriptors', () => {
 test('stampit().compose() with extended stamps', () => {
   const stamp = stampit().compose({
     props: {a: 1},
-    init() {
+    init() {// empty
     },
     deepProps: {a: 1},
     statics: {a: 1},
@@ -134,7 +134,7 @@ test('stampit().compose() with extended stamps and descriptors', () => {
     props: {b: 1}
   });
   const descriptor1 = {
-    init() {
+    init() {// empty
     }
   };
   const descriptor2 = {
