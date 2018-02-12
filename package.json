@@ -1,6 +1,6 @@
 {
-  "name": "@tp/stampit",
-  "version": "1.0.0",
+  "name": "tp-stampit",
+  "version": "1.0.1",
   "description": "A nice, handy API implementation of the compose standard",
   "keywords": [],
   "main": "dist/stampit.umd.js",
