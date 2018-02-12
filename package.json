@@ -6,6 +6,7 @@
   "main": "dist/stampit.umd.js",
   "module": "dist/stampit.es5.js",
   "typings": "dist/types/stampit.d.ts",
+  "private": false,
   "files": [
     "dist"
   ],
