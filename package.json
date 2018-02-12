@@ -19,6 +19,9 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "rollup -c rollup.config.ts -w",
     "prebuild": "rimraf dist",
