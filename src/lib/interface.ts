@@ -1,83 +1,80 @@
-'use strict';
+'use strict'
 
 export interface Descriptor extends StandardDescriptor {
-  init?: any;
-  props?: any;
-  deepProps?: any;
-  statics?: any;
-  deepStatics?: any;
-  conf?: any;
-  deepConf?: any;
+  init?: any
+  props?: any
+  deepProps?: any
+  statics?: any
+  deepStatics?: any
+  conf?: any
+  deepConf?: any
 }
 
 export interface StandardDescriptor {
-  [index: string]: any;
+  [index: string]: any
 
-  methods?: any;
-  properties?: any; // standard props
-  initializers?: any; // standard init
-  composers?: any; // standard init
-  deepProperties?: any; // standard deepProps
-  propertyDescriptors?: any;
+  methods?: any
+  properties?: any // standard props
+  initializers?: any // standard init
+  composers?: any // standard init
+  deepProperties?: any // standard deepProps
+  propertyDescriptors?: any
 
-  staticProperties?: any; // statics
-  staticDeepProperties?: any; // deepStatics
-  staticPropertyDescriptors?: any;
+  staticProperties?: any // statics
+  staticDeepProperties?: any // deepStatics
+  staticPropertyDescriptors?: any
 
-  configuration?: any; // conf
-  deepConfiguration?: any; // deepConf
+  configuration?: any // conf
+  deepConfiguration?: any // deepConf
 }
 
-export interface ComposersFn {
-  (): any
+// stampit
+export interface Stampit extends StampitFn, Utilities {
+  compose: StampitFn
+}
+
+// const stamp:Stamp = stampit()
+export interface Stamp extends Utilities {
+  (...rest: (Descriptor | Stamp | null)[]): Stamp
+
+  [index: string]: any
+
+  compose: Stampit
+  create: StampitFn
 }
 
 // stampit function
 export interface StampitFn {
-  (...rest: (Stamp | Descriptor)[]): Stamp;
+  (...rest: (Stamp | Descriptor | null)[]): Stamp
 }
 
-// compose function
-export interface ComposeFn extends StampitFn, Stamp {
-  [index: string]: any;
-
-  (...rest: any[]): Stamp;
-
-  COMPOSERS: ComposersFn[];
-}
-
-export interface Stampit extends StampitFn, Utilities {
-  compose: ComposeFn;
-}
-
-// stamp = stampit() 结果
-export interface Stamp extends Utilities {
-  (...rest: (Descriptor | Stamp)[]): Stamp;
-
-  compose: ComposeFn;
-  create: StampitFn;
-}
-
+// static methods
 export interface Utilities {
-  [index: string]: any;
+  [index: string]: any
 
-  init: Function;
-  props: Function;
-  deepProps: Function;
-  statics: Function;
-  deepStatics: Function;
-  conf: Function;
-  deepConf: Function;
+  init: UtilityFn
+  props: UtilityFn
+  deepProps: UtilityFn
+  statics: UtilityFn
+  deepStatics: UtilityFn
+  conf: UtilityFn
+  deepConf: UtilityFn
 
-  methods: Function;
-  properties: Function;
-  initializers: Function;
-  composers: ComposersFn;
-  deepProperties: Function;
-  propertyDescriptors: Function;
-  staticProperties: Function;
-  staticDeepProperties: Function;
-  staticPropertyDescriptors: Function;
-  configuration: Function;
-  deepConfiguration: Function;
+  methods: UtilityFn
+  properties: UtilityFn
+  initializers: UtilityFn[]
+  composers: UtilityFn
+  deepProperties: UtilityFn
+  propertyDescriptors: UtilityFn
+  staticProperties: UtilityFn
+  staticDeepProperties: UtilityFn
+  staticPropertyDescriptors: UtilityFn
+  configuration: UtilityFn
+  deepConfiguration: UtilityFn
+}
+
+export interface UtilityFn {
+  (...rest: any[]): any
+
+  [index: string]: any
 }

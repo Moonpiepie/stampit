@@ -5,18 +5,16 @@ import standardiseDescriptor from './lib/standardiseDescriptor'
 import compose from './lib/compose'
 import allUtilities from './lib/allUtilities'
 import { COMPOSE, COMPOSERS, CREATE, STATIC_PROPERTIES } from './lib/const'
-import { Descriptor, Stamp } from './lib/interface'
-
-let stampitWithUtils: any;
+import { Descriptor, Stamp, Stampit } from './lib/interface'
 
 /**
  * Infected stamp. Used as a storage of the infection metadata
  * @type {Function}
  * @return {Stamp}
  */
-let baseStampit: Stamp; // temporary reusing the variable
+let baseStampit: Stamp // temporary reusing the variable
 
-function stampit(this: undefined | Stamp, ...rest: (Descriptor | Stamp)[]): Stamp {
+function stampit(this: undefined | Stamp, ...rest: (Descriptor | Stamp | null)[]): Stamp {
   let composables: (Descriptor | Stamp)[] = []
   let composerResult = this
 
@@ -37,7 +35,7 @@ function stampit(this: undefined | Stamp, ...rest: (Descriptor | Stamp)[]): Stam
   }
 
   // Calling the standard pure compose function here.
-  let composable: Stamp = compose.apply(composerResult || baseStampit, composables)
+  let composable: any = compose.apply(composerResult || baseStampit, composables)
   if (composerResult) composables.unshift(composerResult)
 
   let composers = composable[COMPOSE][COMPOSERS]
@@ -48,11 +46,11 @@ function stampit(this: undefined | Stamp, ...rest: (Descriptor | Stamp)[]): Stam
     }
   }
 
-  return composable
+  return composable as Stamp
 }
 
-stampitWithUtils = allUtilities[COMPOSE] = assign(stampit, allUtilities) // Setting up the shortcut functions
+const stampitWithUtils: any = (allUtilities[COMPOSE] = assign(stampit, allUtilities)) // Setting up the shortcut functions
 
 stampitWithUtils[COMPOSE] = stampitWithUtils.bind(undefined) // bind to undefined
 
-export default stampitWithUtils
+export default stampitWithUtils as Stampit
