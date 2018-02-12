@@ -7,14 +7,14 @@ import allUtilities from './lib/allUtilities'
 import { COMPOSE, COMPOSERS, CREATE, STATIC_PROPERTIES } from './lib/const'
 import { Descriptor, Stamp } from './lib/interface'
 
-let stampitWithUtils: any
+let stampitWithUtils: any;
 
 /**
  * Infected stamp. Used as a storage of the infection metadata
  * @type {Function}
  * @return {Stamp}
  */
-let baseStampit: Stamp // temporary reusing the variable
+let baseStampit: Stamp; // temporary reusing the variable
 
 function stampit(this: undefined | Stamp, ...rest: (Descriptor | Stamp)[]): Stamp {
   let composables: (Descriptor | Stamp)[] = []
