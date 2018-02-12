@@ -1,11 +1,11 @@
 'use strict';
-import {COMPOSE, STATIC_DEEP_PROPERTIES, STATIC_PROPERTIES, STATIC_PROPERTY_DESCRIPTORS} from "./const";
-import createFactory from "./createFactory";
-import compose from "./compose";
-import {isFunction} from "./utils";
-import merge from 'lodash/merge'
-import assign from "lodash/assign";
-import {Stamp, StandardDescriptor} from "./interface";
+import {COMPOSE, STATIC_DEEP_PROPERTIES, STATIC_PROPERTIES, STATIC_PROPERTY_DESCRIPTORS} from './const';
+import createFactory from './createFactory';
+import compose from './compose';
+import {isFunction} from './utils';
+import merge from 'lodash/merge';
+import assign from 'lodash/assign';
+import {Stamp, StandardDescriptor} from './interface';
 
 /**
  * Returns a new stamp given a descriptor and a compose function implementation.

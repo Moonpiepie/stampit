@@ -8,7 +8,6 @@ test('.create()', () => {
       }
     }
   });
-
   expect(stamp.create).toBeTruthy();
   expect(stamp.create().foo()).toBe('foo');
 });

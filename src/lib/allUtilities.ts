@@ -19,12 +19,12 @@ import {
   STATIC_PROPERTIES,
   STATIC_PROPERTY_DESCRIPTORS,
   STATICS
-} from "./const";
-import merge from 'lodash/merge'
-import extractUniqueFunctions from "./extractUniqueFunctions";
-import assign from "lodash/assign";
-import {concat} from "./utils";
-import {Stamp, Stampit, Utilities} from "./interface";
+} from './const';
+import merge from 'lodash/merge';
+import extractUniqueFunctions from './extractUniqueFunctions';
+import assign from 'lodash/assign';
+import {concat} from './utils';
+import {Stamp, Stampit, Utilities} from './interface';
 
 let allUtilities: any = {};
 
@@ -65,4 +65,4 @@ allUtilities[PROPERTY_DESCRIPTORS] = createUtilityFunction(PROPERTY_DESCRIPTORS,
 
 allUtilities[STATIC_PROPERTY_DESCRIPTORS] = createUtilityFunction(STATIC_PROPERTY_DESCRIPTORS, assign);
 
-export default (allUtilities as Utilities)
+export default (allUtilities as Utilities);

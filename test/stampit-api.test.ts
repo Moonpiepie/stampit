@@ -94,6 +94,6 @@ test('test propertyDescriptors', () => {
 
   expect(obj.property2).toBe('Hello');
   expect(() => {
-    obj.property2 = 'World'
+    obj.property2 = 'World';
   }).toThrow(TypeError);
 });

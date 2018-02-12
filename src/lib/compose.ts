@@ -1,5 +1,5 @@
 'use strict';
-import createStamp from "./createStamp";
+import createStamp from './createStamp';
 import {
   COMPOSE,
   COMPOSERS,
@@ -13,12 +13,12 @@ import {
   STATIC_DEEP_PROPERTIES,
   STATIC_PROPERTIES,
   STATIC_PROPERTY_DESCRIPTORS
-} from "./const";
-import {isObject} from "./utils";
-import merge from 'lodash/merge'
-import assign from "lodash/assign";
-import extractUniqueFunctions from "./extractUniqueFunctions";
-import {Descriptor, Stamp, Stampit} from "./interface";
+} from './const';
+import {isObject} from './utils';
+import merge from 'lodash/merge';
+import assign from 'lodash/assign';
+import extractUniqueFunctions from './extractUniqueFunctions';
+import {Descriptor, Stamp, Stampit} from './interface';
 
 /**
  * Mutates the dstDescriptor by merging the srcComposable data into it.
@@ -77,4 +77,4 @@ function compose(this: void | Stamp | Stampit, ...rest: (Stamp | Descriptor)[]):
   return createStamp(descriptor);
 }
 
-export default compose
+export default compose;

@@ -55,13 +55,13 @@ test('stampit({ composers() }).compose({ composers() })', () => {
   let stamp1;
   let stamp2;
   const actualStamp = stampit({
-    composers({stamp}:any) {
+    composers({stamp}: any) {
       stamp1 = stamp;
       executed1 += 1;
     }
   })
     .compose({
-      composers({stamp}:any) {
+      composers({stamp}: any) {
         stamp2 = stamp;
         executed2 += 1;
       }
@@ -128,7 +128,7 @@ test('stamp.compose({ composers() }) passes full composables array', () => {
   let run = 0;
   const stamp2 = stampit();
   const stamp = stampit({
-    composers({composables}:any) {
+    composers({composables}: any) {
       run += 1;
       if (run === 1) {
         expect(composables.length).toBe(1);

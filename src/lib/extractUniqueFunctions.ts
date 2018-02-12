@@ -1,5 +1,5 @@
 'use strict';
-import {isFunction} from "./utils";
+import {isFunction} from './utils';
 
 const concat = Array.prototype.concat;
 

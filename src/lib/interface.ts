@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 export interface Descriptor extends StandardDescriptor {
   init?: any
@@ -11,21 +11,19 @@ export interface Descriptor extends StandardDescriptor {
 }
 
 export interface StandardDescriptor {
-  [index: string]: any
-
   methods?: any
   properties?: any // standard props
   initializers?: any // standard init
   composers?: any // standard init
   deepProperties?: any // standard deepProps
   propertyDescriptors?: any
-
   staticProperties?: any // statics
   staticDeepProperties?: any // deepStatics
   staticPropertyDescriptors?: any
-
   configuration?: any // conf
   deepConfiguration?: any // deepConf
+
+  [index: string]: any
 }
 
 // stampit
@@ -35,12 +33,12 @@ export interface Stampit extends StampitFn, Utilities {
 
 // const stamp:Stamp = stampit()
 export interface Stamp extends Utilities {
+  compose: Stampit
+  create: StampitFn
+
   (...rest: (Descriptor | Stamp | null)[]): Stamp
 
   [index: string]: any
-
-  compose: Stampit
-  create: StampitFn
 }
 
 // stampit function
@@ -50,8 +48,6 @@ export interface StampitFn {
 
 // static methods
 export interface Utilities {
-  [index: string]: any
-
   init: UtilityFn
   props: UtilityFn
   deepProps: UtilityFn
@@ -59,7 +55,6 @@ export interface Utilities {
   deepStatics: UtilityFn
   conf: UtilityFn
   deepConf: UtilityFn
-
   methods: UtilityFn
   properties: UtilityFn
   initializers: UtilityFn[]
@@ -71,6 +66,8 @@ export interface Utilities {
   staticPropertyDescriptors: UtilityFn
   configuration: UtilityFn
   deepConfiguration: UtilityFn
+
+  [index: string]: any
 }
 
 export interface UtilityFn {

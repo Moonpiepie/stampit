@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import stampit from "../src/stampit"
+import stampit from '../src/stampit';
 
 // stampit.methods, stampit.init, stampit.props, etc.
 

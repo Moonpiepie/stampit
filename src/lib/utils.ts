@@ -1,5 +1,5 @@
 'use strict';
-import {COMPOSE} from "./const";
+import {COMPOSE} from './const';
 
 export function isFunction(obj: Function) {
   return typeof obj === 'function';

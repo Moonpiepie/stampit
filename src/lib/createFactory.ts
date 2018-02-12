@@ -1,9 +1,9 @@
 'use strict';
-import {COMPOSE, DEEP_PROPERTIES, INITIALIZERS, METHODS, PROPERTIES, PROPERTY_DESCRIPTORS} from "./const";
-import {isFunction} from "./utils";
-import merge from 'lodash/merge'
-import assign from "lodash/assign";
-import {Descriptor, Stamp} from "./interface";
+import {COMPOSE, DEEP_PROPERTIES, INITIALIZERS, METHODS, PROPERTIES, PROPERTY_DESCRIPTORS} from './const';
+import {isFunction} from './utils';
+import merge from 'lodash/merge';
+import assign from 'lodash/assign';
+import {Descriptor, Stamp} from './interface';
 
 export default function createFactory() {
 
@@ -41,5 +41,5 @@ export default function createFactory() {
     }
 
     return obj;
-  }
+  };
 }

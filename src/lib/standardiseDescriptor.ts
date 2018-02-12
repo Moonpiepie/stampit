@@ -1,7 +1,7 @@
 'use strict';
-import {isObject} from "./utils";
-import merge from 'lodash/merge'
-import assign from "lodash/assign";
+import {isObject} from './utils';
+import merge from 'lodash/merge';
+import assign from 'lodash/assign';
 import extractUniqueFunctions from './extractUniqueFunctions';
 
 import {
@@ -19,8 +19,8 @@ import {
   STATIC_DEEP_PROPERTIES,
   STATIC_PROPERTIES,
   STATIC_PROPERTY_DESCRIPTORS,
-} from './const'
-import {Descriptor} from "./interface";
+} from './const';
+import {Descriptor} from './interface';
 
 /**
  * Converts stampit extended descriptor to a standard one.
