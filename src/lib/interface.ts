@@ -36,14 +36,14 @@ export interface Stamp extends Utilities {
   compose: Stampit
   create: StampitFn
 
-  (...rest: (Descriptor | Stamp | null)[]): Stamp
+  (...args: (Descriptor | Stamp | null)[]): Stamp
 
   [index: string]: any
 }
 
 // stampit function
 export interface StampitFn {
-  (...rest: (Stamp | Descriptor | null)[]): Stamp
+  (...args: (Stamp | Descriptor | null)[]): Stamp
 }
 
 // static methods
@@ -71,7 +71,7 @@ export interface Utilities {
 }
 
 export interface UtilityFn {
-  (...rest: any[]): any
+  (...args: any[]): any
 
   [index: string]: any
 }

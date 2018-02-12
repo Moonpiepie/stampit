@@ -1,4 +1,5 @@
 import stampit from '../src/stampit';
+
 // Basics
 test('.create()', () => {
   const stamp = stampit({
